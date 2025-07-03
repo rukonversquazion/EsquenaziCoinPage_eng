@@ -1,0 +1,345 @@
+/* Import Google Fonts for better typography */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700&display=swap');
+
+/* Define CSS Variables for easy theme changes */
+:root {
+    --primary-color: #4CAF50; /* A friendly green for growth and community */
+    --secondary-color: #2196F3; /* A vibrant blue for trust and technology */
+    --accent-color: #FFD700; /* Gold for prominence and value */
+    --text-color-dark: #333;
+    --text-color-light: #f4f4f4;
+    --bg-light: #ffffff;
+    --bg-dark: #222;
+    --nav-height: 60px;
+    --font-family-body: 'Roboto', sans-serif;
+    --font-family-heading: 'Playfair Display', serif;
+}
+
+/* Base styles */
+body {
+    margin: 0;
+    font-family: var(--font-family-body);
+    line-height: 1.6;
+    color: var(--text-color-dark);
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+h1, h2, h3 {
+    font-family: var(--font-family-heading);
+    color: var(--primary-color);
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+/* Navigation Bar */
+nav {
+    position: fixed; /* Fixed at the top */
+    width: 100%;
+    background-color: var(--bg-dark);
+    color: var(--text-color-light);
+    padding: 10px 0;
+    z-index: 1000; /* Ensures nav stays on top */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-logo {
+    height: 40px; /* Size of the logo in the nav */
+    width: auto;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: var(--text-color-light);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 4px;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--primary-color);
+    background-color: rgba(255,255,255,0.1); /* Subtle highlight on hover/active */
+}
+
+/* Sections - General Styling */
+section {
+    padding: 100px 20px; /* Generous padding for content */
+    min-height: calc(100vh - var(--nav-height)); /* Ensure sections are at least viewport height minus nav */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box; /* Include padding in height calculation */
+}
+
+/* Hero Section (Home) */
+.hero {
+    background: linear-gradient(to bottom right, #1a1a2e, #16213e); /* Dark, sophisticated gradient */
+    color: var(--text-color-light);
+    padding-top: var(--nav-height); /* Compensate for fixed nav */
+}
+
+.hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.hero-logo {
+    width: 180px; /* Larger logo for hero section */
+    height: auto;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-size: 3.8em;
+    margin-bottom: 0.2em;
+    color: var(--accent-color); /* Gold color for main heading */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero h2 {
+    font-size: 2.2em;
+    margin-bottom: 1.5em;
+    color: #e0e0e0;
+}
+
+.hero p {
+    font-size: 1.3em;
+    margin-bottom: 3em;
+    color: #c0c0c0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 25px; /* Space between buttons */
+    justify-content: center;
+}
+
+/* Content Sections (About, Mission) */
+.content-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 60px; /* More space between text and image */
+    padding: 100px 20px;
+    background-color: var(--bg-light);
+    text-align: left; /* Default text alignment for these sections */
+}
+
+.content-section:nth-of-type(even) {
+    background-color: #f8f8f8; /* Subtle alternating background for readability */
+}
+
+.content-section .section-text {
+    flex: 1;
+    min-width: 300px; /* Prevent text from becoming too narrow */
+}
+
+.content-section .section-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+}
+
+.content-section .section-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px; /* Slightly rounded corners for images */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* More pronounced shadow */
+}
+
+.content-section.reverse {
+    flex-direction: row-reverse; /* Swap order for alternate sections */
+}
+
+/* Call to Action Section */
+.call-to-action {
+    background: linear-gradient(to top left, var(--primary-color), var(--secondary-color)); /* Gradient background */
+    color: var(--text-color-light);
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.call-to-action h1 {
+    font-size: 3em;
+    color: var(--text-color-light); /* White heading on colored background */
+    margin-bottom: 0.8em;
+}
+
+.call-to-action p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    color: rgba(255,255,255,0.9);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 8px; /* More rounded buttons */
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn.primary {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+}
+
+.btn.primary:hover {
+    background-color: #45a049;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.btn.secondary {
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
+}
+
+.btn.secondary:hover {
+    background-color: #1e87e5;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* Footer */
+footer {
+    background-color: var(--bg-dark);
+    color: var(--text-color-light);
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 3em;
+    }
+    .hero h2 {
+        font-size: 1.8em;
+    }
+    .content-section {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-content {
+        flex-direction: column;
+        padding: 10px 15px;
+    }
+    nav ul {
+        margin-top: 15px;
+        justify-content: center;
+        flex-wrap: wrap; /* Allow nav items to wrap */
+    }
+    nav ul li {
+        margin: 5px 10px;
+    }
+
+    section {
+        padding: 80px 15px;
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+    .hero h2 {
+        font-size: 1.5em;
+    }
+    .hero p {
+        font-size: 1.1em;
+    }
+    .hero-buttons, .cta-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .btn {
+        width: 80%; /* Make buttons take more width on smaller screens */
+        max-width: 300px;
+    }
+
+    .content-section {
+        flex-direction: column; /* Stack content vertically */
+        text-align: center;
+        padding: 60px 15px;
+        gap: 30px;
+    }
+    .content-section.reverse {
+        flex-direction: column; /* Keeps consistent stacking */
+    }
+    .content-section .section-text,
+    .content-section .section-image {
+        flex: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+    .hero h2 {
+        font-size: 1.2em;
+    }
+    .call-to-action h1 {
+        font-size: 2.2em;
+    }
+}
