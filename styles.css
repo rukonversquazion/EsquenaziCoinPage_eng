@@ -48,16 +48,19 @@ nav {
 
 .nav-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative;
 }
 
 .nav-logo {
-    height: 40px; /* Size of the logo in the nav */
+    height: 40px;
     width: auto;
+    margin-left: 24px;
+    cursor: pointer;
 }
 
 nav ul {
@@ -111,9 +114,11 @@ section {
 }
 
 .hero-logo {
-    width: 180px; /* Larger logo for hero section */
+    display: block;
+    margin: 0 auto 30px auto;
+    width: 140px;
+    max-width: 90vw;
     height: auto;
-    margin-bottom: 30px;
 }
 
 .hero h1 {
